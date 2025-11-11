@@ -1,0 +1,114 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Calibri;
+}
+
+h2 {
+    color: #BC6C25;
+}
+
+#container {
+    display: flex;
+    padding: 20px;
+    height: 100vh; /* Make sure container takes full viewport height */
+    box-sizing: border-box;
+}
+
+#sidebar {
+    flex: 1; /* Represents 1 part */
+    max-width: 300px; /* Optional: limit the max width for larger screens */
+    height: 930px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add space between boxes */
+    box-sizing: border-box;
+    background-color: #46A4C8; /* Light background color for sidebar */
+}
+
+.box {
+    padding: 5px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recipes {
+    flex: 4; /* Represents 4 parts */
+    padding: 0 20px; /* Add some padding for better appearance */
+    box-sizing: border-box;
+}
+
+.recipeBook {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add space between recipe cards */
+}
+
+.recipeCard {
+    width: 18%; /* Adjust as needed */
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align text and images */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for grow effect */
+}
+
+.recipeCard img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.recipeCard h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #FF8C00; /* Darker orange for recipe name */
+    transition: color 0.3s; /* Add transition for text color change */
+}
+
+.recipeCard a {
+    text-decoration: none;
+}
+
+.recipeCard:hover {
+    transform: scale(1.05); /* Grow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
+}
+
+.recipeCard:hover h3 {
+    color: #FF8C00; /* Darker orange for recipe name */
+}
+
+#cuisineList, #allergenList {
+    list-style: none;
+    padding: 0;
+}
+
+#cuisineList li, #allergenList li {
+    padding: 5px 0;
+    transition: color 0.3s; /* Add transition for text color change */
+    cursor: pointer; /* Indicate clickable item */
+}
+
+#cuisineList li a, #allergenList li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#cuisineList li a:hover, #allergenList li a:hover {
+    text-decoration: none;
+    color: #DDA15E; /* Orange color on hover */
+}
+
+#cuisineList li a:last-child, #allergenList li a:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}

@@ -1,0 +1,17 @@
+{
+  "name": "hans_bday",
+  "version": "1.0.0",
+  "description": "Hans 2025 Birthday Website",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-handlebars": "^7.1.3"
+  }
+}
