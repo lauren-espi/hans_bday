@@ -4,21 +4,4 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: Calibri;
-}
-
-.content {
-    /* display: flex;
-    flex-flow: column;
-    height: 100%; */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    z-index: 1; /* Ensure content is in front of the carousel */
-    margin-top: 10%;
-    color: white;
-    font-weight: bold;
-    font-size: larger;
-    padding: 20px;
 }
