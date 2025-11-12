@@ -4,32 +4,7 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: Calibri;}
-
-.carousel {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Place carousel behind the content */
-}
-
-.carousel-images {
-    display: flex;
-    height: 100%;
-    transition: transform 1s ease-in-out;
-}
-
-.carousel-image {
-    min-width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(50%); /* Darken the images */
-}
-
-.enter {
-    width: 300px;
+    font-family: Calibri;
 }
 
 .content {
