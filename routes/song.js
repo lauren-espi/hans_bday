@@ -11,10 +11,10 @@ const __dirname = dirname(__filename);
 router.route('/')
     .get(async (req, res) => {
         try {
-            const recipes = await loadRecipes();
+            res.send('<h1>Song Page</h1><p>Work in progress</p>');
         } catch (e) {
             console.error(e);
-            res.status(404).json({ error: 'Not found' });
+            res.status(500).send('Internal server error');
         }
     });
 
