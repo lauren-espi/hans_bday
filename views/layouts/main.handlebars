@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{#if pageTitle}}{{pageTitle}} - Happy Birthday Hans!{{else}}Happy Birthday Hans!{{/if}}</title>
+  <link rel="stylesheet" href="/public/postcard.css" />
 
   <style>
     header {
@@ -38,11 +40,9 @@
       background-color: #f5f9e9;
       font-family: Garamond, serif;
       color: #051014;
-    }
-
-    main {
       display: flex;
-      padding: 20px;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     footer {
@@ -74,7 +74,7 @@
   </main>
 
   <footer>
-    <p>I love you :)</p>
+    <p>You have to admit, I did a pretty good job!</p>
   </footer>
 </body>
 

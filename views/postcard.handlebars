@@ -1,9 +1,20 @@
-{{!-- not sure if this is even touched upon --}}
-<main> 
-    <div class="content">
-        <p>The main Stuff</p>
+<style>
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 200px;
+      flex: 1;
+    }
+</style>
+
+<div class="postcard-container">
+  <div class="postcard">
+    <div class="front">
+      <img src="/public/images/postFront.png" alt="Postcard Front" />
     </div>
-    <link rel="stylesheet" type="text/css" href="../../public/postcard.css" />
-    
-    <script src="../routes/postcard.js"></script>
-</main>
+    <div class="back">
+      <img src="/public/images/postBack.png" alt="Postcard Back" />
+    </div>
+  </div>
+</div>
