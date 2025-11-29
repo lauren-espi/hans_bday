@@ -52,13 +52,19 @@
     }
 
     body {
-      margin: 0;
+      /* margin: 0;
       background-color: #f5f9e9;
       font-family: Garamond, serif;
       color: #051014;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      min-height: 100vh; */
+      background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/public/images/background.png');
+      /* background-image: url('/public/images/background.png'); */
+      background-size: cover;        /* Makes the image fill the screen */
+      background-position: center;   /* Centers the image */
+      background-repeat: no-repeat;  /* Prevents repeating tiles */
+      background-attachment: fixed;  /* Optional: makes it stay still on scroll */
     }
 
     footer {
