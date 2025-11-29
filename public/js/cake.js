@@ -96,7 +96,7 @@ function extinguishCake() {
 function showCelebration() {
   const instructions = document.querySelector('.instructions');
   if (instructions) {
-    instructions.textContent = '🎉 You did it! Happy Birthday! 🎉';
+    instructions.textContent = '🎉 Yay! Happy Birthday! 🎉';
     instructions.style.color = '#3F6E3C';
     instructions.style.fontSize = '24px';
     instructions.style.fontWeight = 'bold';
