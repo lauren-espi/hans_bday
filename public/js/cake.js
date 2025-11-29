@@ -75,7 +75,7 @@ function showCelebration() {
   if (instructions) {
     instructions.textContent = '🎉 Yay! Happy Birthday! 🎉';
     instructions.style.color = '#051014';
-    instructions.style.fontSize = '24px';
+    instructions.style.fontSize = '25px';
     instructions.style.fontWeight = 'bold';
   }
   
@@ -92,7 +92,6 @@ function celebrateWithConfetti() {
     emoji.textContent = confetti[Math.floor(Math.random() * confetti.length)];
     emoji.style.position = 'absolute'; // use absolute so it scrolls with page
 
-    //emoji.style.left = Math.random() * 100 + '%';
     const container = document.querySelector('main') || document.body;
     const containerRect = container.getBoundingClientRect();
     const minX = containerRect.left + 20;
