@@ -56,48 +56,25 @@ function extinguishCake() {
 
   // If this is a <video> element
   if (el.tagName && el.tagName.toLowerCase() === 'video') {
-    el.classList.add('fade-out');
-    setTimeout(() => {
-      try {
-        const oldSources = el.querySelectorAll('source');
-        oldSources.forEach(s => s.remove());
-        const src = document.createElement('source');
-        src.src = '/public/videos/cake-extinguished.mp4';
-        src.type = 'video/mp4';
-        el.appendChild(src);
-        el.loop = false;
-        el.muted = false;
-        el.load();
-        el.play().catch(() => {});
-        el.classList.remove('fade-out');
-        el.classList.add('fade-in', 'celebration');
-      } catch (e) {
-        console.error('Error swapping video source', e);
-      }
-      allExtinguished = true;
-      setTimeout(showCelebration, 500);
-    }, 300);
+    const newSrc = '/public/images/cake-extinguished.png?t=' + Date.now();
+    el.src = newSrc;
+    allExtinguished = true;
+    setTimeout(showCelebration, 500);
     return;
   }
 
-  // Image element (or other) fallback: swap `src` on the same element
-  el.classList.add('fade-out');
-  setTimeout(() => {
-    // add cache-buster to force reload
     const newSrc = '/public/images/cake-extinguished.png?t=' + Date.now();
     el.src = newSrc;
-    el.classList.remove('fade-out');
-    el.classList.add('fade-in', 'celebration');
+
     allExtinguished = true;
     setTimeout(showCelebration, 500);
-  }, 300);
 }
 
 function showCelebration() {
   const instructions = document.querySelector('.instructions');
   if (instructions) {
     instructions.textContent = '🎉 Yay! Happy Birthday! 🎉';
-    instructions.style.color = '#3F6E3C';
+    instructions.style.color = '#051014';
     instructions.style.fontSize = '24px';
     instructions.style.fontWeight = 'bold';
   }
@@ -107,22 +84,42 @@ function showCelebration() {
 }
 
 function celebrateWithConfetti() {
-  // Simple confetti effect by creating floating emoji
   const confetti = ['🎈', '🎉', '🎊', '⭐', '✨', '🎂'];
+  const pageHeight = document.documentElement.scrollHeight; // full page height
   
   for (let i = 0; i < 20; i++) {
     const emoji = document.createElement('div');
     emoji.textContent = confetti[Math.floor(Math.random() * confetti.length)];
-    emoji.style.position = 'fixed';
-    emoji.style.left = Math.random() * 100 + '%';
+    emoji.style.position = 'absolute'; // use absolute so it scrolls with page
+
+    //emoji.style.left = Math.random() * 100 + '%';
+    const container = document.querySelector('main') || document.body;
+    const containerRect = container.getBoundingClientRect();
+    const minX = containerRect.left + 20;
+    const maxX = containerRect.right - 20;
+
+    const leftPos = minX + Math.random() * (maxX - minX - 30);
+    emoji.style.left = `${leftPos}px`;
+
+
     emoji.style.top = '-30px';
     emoji.style.fontSize = '30px';
     emoji.style.pointerEvents = 'none';
-    emoji.style.animation = `fall ${2 + Math.random() * 1}s linear forwards`;
+    
+    // Randomized duration
+    const duration = 2 + Math.random() * 1; // seconds
+    
+    emoji.style.transition = `transform ${duration}s linear, opacity ${duration}s linear`;
     document.body.appendChild(emoji);
     
+    // Trigger the fall after adding to DOM
+    requestAnimationFrame(() => {
+      emoji.style.transform = `translateY(${pageHeight + 30}px)`; // fall to bottom
+      emoji.style.opacity = '0';
+    });
+    
     // Remove after animation
-    setTimeout(() => emoji.remove(), 3000);
+    setTimeout(() => emoji.remove(), duration * 1000);
   }
 }
 
