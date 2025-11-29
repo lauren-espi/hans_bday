@@ -5,19 +5,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  padding: 40px;
+  gap: 10px;
+  padding: 10px;
   width: 100%;
-  margin: 0 auto 0 -35px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .cake {
   position: relative;
+  width: 100%;
   max-width: 600px;
-  max-height: 600px;
+  margin: 0 auto;
 }
 
 .cake-video, .cake-image {
+  width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -43,7 +48,7 @@
 }
 
 .instructions {
-  font-size: 30px;
+  font-size: 18px;
   color: #051014;
   text-align: center;
   font-weight: bold;
