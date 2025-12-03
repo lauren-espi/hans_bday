@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.song-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotateY(0deg); */
+}
+
+.song{
+    position: relative;
+    width: 700px;
+    height: 800px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.song img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.song-intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .song-annotation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
