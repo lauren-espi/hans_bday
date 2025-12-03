@@ -1,8 +1,40 @@
-<main>
-    <div class="content">
-        <p>Connections Stuff</p>
-    </div>
-    <link rel="stylesheet" type="text/css" href="../../public/connections.css" />
-    
-    <script src="../routes/connections.js"></script>
-</main>
+<div style="text-align: center; margin-top: 20px;">
+    <h2>Create groups of four!</h2>
+    <h4>(Note: Don't reload the page! Press "New Game" to properly reset)</h4>
+</div>
+<div id="game-over-container" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); color: white; text-align: center; padding-top: 20%;">
+    <h1 style="font-size: 5rem;">GAME OVER</h1>
+</div>
+
+<div class="grid">
+    {{#each grid}}
+        {{#each this}}
+            <div class="grid-item" onclick="toggleTile(this)" data-word="{{this}}">{{this}}</div>
+        {{/each}}
+    {{/each}}
+</div>
+
+<div class="mistake-counter">
+    <div>Mistakes remaining</div>
+    {{#each mistakesArray}}
+        <div class="mistake-square mistake"></div>
+    {{/each}}
+    {{#each emptyArray}}
+        <div class="mistake-square"></div>
+    {{/each}}
+</div>
+
+<div class="button-container">
+    <button id="new-game-button" class="game-button" onclick="startNewGame()">New Game</button>
+    <button id="shuffle-button" class="game-button" onclick="shuffleTiles()">Shuffle</button>
+    <button id="submit-button" class="game-button" onclick="submitGuess()">Submit Guess</button>
+    <p id="message" style="color: red;"></p>
+</div>
+<div id="correct-guess-container"></div>
+
+<link rel="stylesheet" href="/public/connections.css" />
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script>
+    window.serverSubmittedKeys = {{{alreadyGuessedKeysJSON}}} || [];
+</script>
+<script src="/public/js/connections-game.js"></script>

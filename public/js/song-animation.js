@@ -31,14 +31,3 @@ document.addEventListener('DOMContentLoaded', () => {
         introImg.style.zIndex = 2; 
     });
 });
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const song = document.querySelector('.song');
-
-//   song.addEventListener('click', () => {
-//     song.classList.toggle('flipped');
-//   });
-
-// });

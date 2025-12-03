@@ -1,0 +1,116 @@
+h2,h4{ 
+    font-family: Garamond, serif;  
+    font-weight: bold; 
+    color: #051014; 
+    margin: 0 0 8px 0; 
+}
+
+body { 
+    font-family: Garamond, serif; 
+    font-weight:bold; 
+    color: #051014; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10px; 
+    max-width: 600px; 
+    margin: 16px auto; 
+}
+
+.grid-item {
+	background-color: #fff; /* white cards */
+	padding: 12px 8px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: background-color 0.18s, transform 0.08s;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+	color: #051014;
+	font-size: 16px;
+}
+.grid-item:active { transform: translateY(1px); }
+
+.grid-item.disable-hover:hover { 
+    background-color: #fff; 
+    color: #051014; 
+}
+
+.grid-item.selected { 
+    background-color: #5a594e; 
+    color: white; 
+}
+
+.selected, .disable-hover:hover { 
+    background-color: #5a594e; 
+    color: white; 
+}
+
+.button-container { 
+    text-align: center; 
+    margin-top: 18px; 
+}
+
+.game-button {
+	font-family: Garamond, serif;
+    font-weight: bold;
+	padding: 8px 16px;
+	margin: 0 8px;
+	border-radius: 6px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #051014;
+	cursor: pointer;
+}
+.game-button:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+.game-button.disabled { 
+    background-color: #f0f0f0; 
+    pointer-events: none; 
+}
+
+/* Category color chips (use same palette) */
+.green { background-color: #a4c45c; color: white; }
+.yellow { background-color: #fadb6c; color: white; }
+.purple { background-color: #b984c1; color: white; }
+.blue { background-color: #2c84ec; color: white; }
+
+.correct-guess-container { 
+    text-align: center; 
+    margin-top: 18px; 
+    color: black; 
+    background: #ffffff;
+}
+
+.correct-guess { 
+    margin-bottom: 8px; 
+    padding: 10px; 
+    text-align: center; 
+    border-radius: 6px;
+}
+
+.mistake-counter { 
+    text-align: center; 
+    margin: 18px auto; 
+}
+
+.mistake-square { 
+    width: 18px; 
+    height: 18px; 
+    display: inline-block; 
+    margin: 2px; 
+    background: #ffffff; 
+    border: 1px solid #e6e6e6; 
+    border-radius: 3px; 
+}
+
+.mistake { 
+    background: #5a594e; 
+}
+
+/* Small screens: make grid responsive */
+@media (max-width: 520px) {
+	.grid { grid-template-columns: repeat(2, 1fr); max-width: 320px; }
+	.grid-item { font-size: 14px; padding: 10px; }
+}
