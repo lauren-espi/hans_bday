@@ -102,23 +102,6 @@ function checkGameCompletion() {
   if (totalTiles === guessedTiles) triggerConfetti();
 }
 
-function shuffleTiles() {
-  clearMessage();
-  document.querySelectorAll('.grid-item.selected').forEach(tile => tile.classList.remove('selected'));
-  document.querySelectorAll('.grid-item').forEach(tile => {
-    if (!tile.classList.contains('green') && !tile.classList.contains('yellow') && !tile.classList.contains('purple') && !tile.classList.contains('blue')) {
-      const currentWord = tile.getAttribute('data-word');
-      let randomIndex, randomTile;
-      do { randomIndex = Math.floor(Math.random() * document.querySelectorAll('.grid-item').length); randomTile = document.querySelectorAll('.grid-item')[randomIndex]; }
-      while(randomTile.classList.contains('green') || randomTile.classList.contains('yellow') || randomTile.classList.contains('purple') || randomTile.classList.contains('blue'));
-      const randomWord = randomTile.getAttribute('data-word');
-      tile.setAttribute('data-word', randomWord);
-      tile.textContent = randomWord;
-      randomTile.setAttribute('data-word', currentWord);
-      randomTile.textContent = currentWord;
-    }
-  });
-}
 
 function toggleTile(element) {
   clearMessage();

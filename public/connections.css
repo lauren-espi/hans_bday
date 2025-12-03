@@ -71,10 +71,10 @@ body {
 }
 
 /* Category color chips (use same palette) */
-.green { background-color: #a4c45c; color: white; }
-.yellow { background-color: #fadb6c; color: white; }
-.purple { background-color: #b984c1; color: white; }
-.blue { background-color: #2c84ec; color: white; }
+.green { background-color: #a0c35a; color: black; }
+.yellow { background-color: #f9df6d; color: black; }
+.purple { background-color: #ba81c5; color: black; }
+.blue { background-color: #b0c4ef; color: black; }
 
 .correct-guess-container { 
     text-align: center; 
@@ -89,6 +89,10 @@ body {
     text-align: center; 
     border-radius: 6px;
 }
+
+/* Ensure the correct-guess line shows only the category title in bold */
+.correct-guess { font-weight: normal; }
+.correct-guess strong { font-weight: 700; }
 
 .mistake-counter { 
     text-align: center; 
